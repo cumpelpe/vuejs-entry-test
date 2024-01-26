@@ -29,12 +29,21 @@ nav {
 
 div,
 span {
+    display: block;
     width: 100%;
-    color: var(--color-text-light) !important;
+    color: var(--color-text-light);
+}
+
+div {
+    padding: 1em;
+}
+
+span {
+    font-size: x-large;
 }
 
 div:hover {
-    background-color: var(--color-background-dark);
-
+    background-color: var(--color-background-highlight);
+    transition: .3s;
 }
 </style>
