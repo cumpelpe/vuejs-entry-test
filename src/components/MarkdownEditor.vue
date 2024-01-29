@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import MarkdownDisplay from '@/components/MarkdownDisplay.vue';
+import ButtonInput from './ButtonInput.vue';
 
 const edited_text = ref("# Hello there!");
 
@@ -19,7 +20,7 @@ function togglePreview() {
 <template>
     <div class="pure-g">
         <div :class="[{ 'pure-u-1-2': preview_ref }, { 'pure-u-1-1': !preview_ref }]">
-            <button @click="togglePreview">Toggle preview</button>
+            <ButtonInput @click="togglePreview">Toggle preview</ButtonInput>
             <textarea v-model="edited_text"></textarea>
         </div>
         <div class="pure-u-1-2" v-show="preview_ref">
