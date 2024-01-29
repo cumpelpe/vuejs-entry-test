@@ -25,6 +25,8 @@ withDefaults(defineProps<{
 </template>
 
 <style scoped>
+/* https://codepen.io/meodai/pen/rNedxBa modified */
+
 div {
     margin-top: 2rem;
     padding: 0;
