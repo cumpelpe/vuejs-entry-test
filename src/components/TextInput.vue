@@ -75,9 +75,15 @@ div {
     border-radius: var(--size-radius);
 }
 
+.input_field:has(input:focus) {
+    color: var(--color-main);
+    border-color: var(--color-main);
+}
+
 .input_field:has(input:focus)+.input_label {
     transform: translate(0.15rem, -55%) scale(0.8);
-    color: var(--color-accent);
+    color: var(--color-main);
+    border-color: var(--color-main);
 }
 
 input_label {
@@ -91,5 +97,6 @@ input:focus {
     background-color: var(--color-background);
     width: 100%;
     height: 100%;
+    outline: none;
 }
 </style>
