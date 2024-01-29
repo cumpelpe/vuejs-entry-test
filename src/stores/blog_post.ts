@@ -1,5 +1,6 @@
-import { ref, computed, type Ref } from 'vue'
+import { ref, type Ref } from 'vue'
 import { defineStore } from 'pinia'
+import posts_lorem_ipsum from "@/stores/blog_posts"
 
 class BlogPost {
     private _id: number;
@@ -55,5 +56,10 @@ class BlogPost {
 export const blogPostsStore = defineStore('blog_posts', () => {
     const blog_posts: Ref<Array<BlogPost>> = ref([]);
 
-    return { blog_posts }
+    function load_posts() {
+        const posts = posts_lorem_ipsum;
+        blog_posts.value = Array.from(posts['posts']).map(e=>new BlogPost(e['id'], e['title'], e['img'], e['desc'], e['content']));
+    }
+    load_posts();
+    return { blog_posts, load_posts }
 })

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from "../views/HomeView.vue"
 import BlogPostEditViewVue from '@/views/BlogPostEditView.vue'
+import BlogPostListViewVue from '@/views/BlogPostListView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,7 +9,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: BlogPostListViewVue
     },
     {
       path: "/create-post",
