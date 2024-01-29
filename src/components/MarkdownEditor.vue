@@ -20,7 +20,9 @@ function togglePreview() {
 <template>
     <div class="pure-g">
         <div :class="[{ 'pure-u-1-2': preview_ref }, { 'pure-u-1-1': !preview_ref }]">
-            <ButtonInput @click="togglePreview">Toggle preview</ButtonInput>
+            <span>
+                <ButtonInput @click="togglePreview">Toggle preview</ButtonInput>
+            </span>
             <textarea v-model="edited_text"></textarea>
         </div>
         <div class="pure-u-1-2" v-show="preview_ref">
@@ -37,8 +39,11 @@ div {
 div>div:nth-child(2) {
     padding-left: .5rem;
 }
+
 div>div:first-child {
     padding-right: .5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 textarea {
@@ -47,5 +52,4 @@ textarea {
     resize: none;
     background: none;
     border: 3px solid var(--color-background-dark);
-}
-</style>
+}</style>
