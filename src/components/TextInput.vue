@@ -51,7 +51,7 @@ div {
 .input_label {
     position: absolute;
     left: 0;
-    top: 0;
+    top: -2px;
     padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
     margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * .5);
     background: var(--color-background);
@@ -62,6 +62,7 @@ div {
     transition: transform 120ms ease-in;
     font-weight: bold;
     line-height: 1.2;
+    z-index: 2;
 }
 
 .input_field {
@@ -86,9 +87,6 @@ div {
     border-color: var(--color-main);
 }
 
-input_label {
-    position: relative;
-}
 
 input,
 input:focus {
@@ -98,5 +96,6 @@ input:focus {
     width: 100%;
     height: 100%;
     outline: none;
+    z-index: 3;
 }
 </style>
