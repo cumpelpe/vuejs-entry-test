@@ -19,16 +19,16 @@ const image_path = ref("https://picsum.photos/600/300");
             <img :src="image_path" />
         </div>
         <div class="pure-u-10-24">
-            <MarkdownEditor :preview="false" />
+            <MarkdownEditor :preview="false" label="Short Description" />
         </div>
         <div class="pure-u-1-1 editor">
-            <MarkdownEditor :preview="true" />
+            <MarkdownEditor :preview="true" label="Post content" />
         </div>
     </div>
 </template>
 
 <style scoped>
-img{
+img {
     max-width: 100%;
     margin: auto;
     display: block;

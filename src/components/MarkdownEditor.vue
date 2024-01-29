@@ -2,11 +2,13 @@
 import { ref } from 'vue'
 import MarkdownDisplay from '@/components/MarkdownDisplay.vue';
 import ButtonInput from './ButtonInput.vue';
+import TitleText from './TitleText.vue';
 
 const edited_text = ref("# Hello there!");
 
 const props = defineProps({
-    preview: Boolean
+    preview: Boolean,
+    label: String
 });
 const preview_ref = ref(props.preview)
 console.log(preview_ref)
@@ -20,6 +22,9 @@ function togglePreview() {
 <template>
     <div class="pure-g">
         <div :class="[{ 'pure-u-1-2': preview_ref }, { 'pure-u-1-1': !preview_ref }]">
+            <span>
+                <TitleText :text="label" />
+            </span>
             <span>
                 <ButtonInput @click="togglePreview">Toggle preview</ButtonInput>
             </span>
@@ -52,4 +57,5 @@ textarea {
     resize: none;
     background: none;
     border: 3px solid var(--color-background-dark);
-}</style>
+}
+</style>
