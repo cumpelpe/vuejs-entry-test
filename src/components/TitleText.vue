@@ -22,6 +22,7 @@ span {
     text-decoration: none;
     color: var(--color-dark);
     text-align: left;
+    left: 3px;
 }
 
 span.after {
