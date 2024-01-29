@@ -9,10 +9,17 @@ import Navbar from './components/Navbar.vue'
     <div class="pure-u-1-5">
       <Navbar />
     </div>
-    <div class="pure-u-4-5 content">
+    <div class="pure-u-4-5">
+      <div class="content">
       <RouterView />
+    </div>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.content{
+  width: 95%;
+  margin: 1% auto;
+}
+</style>
