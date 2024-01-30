@@ -2,21 +2,24 @@
 import { blogPostsStore } from "@/stores/blog_post"
 import MarkdownDisplay from "@/components/MarkdownDisplay.vue";
 import TitleText from "@/components/TitleText.vue";
+import { RouterLink } from "vue-router";
 
 const blog_posts_store = blogPostsStore();
 </script>
 
 <template>
     <div class="posts">
-        <div class="blog-post pure-g" :key="post['id']" v-for="post in blog_posts_store.blog_posts">
-            <div class="pure-u-2-5">
-                <TitleText :text="post['title_text']" />
-                <img :src="post['title_image_path']" alt="">
+        <RouterLink :to="'/posts/' + post['id']" :key="post['id']" v-for="post in blog_posts_store.blog_posts">
+            <div class="blog-post pure-g" >
+                <div class="pure-u-2-5">
+                    <TitleText :text="post['title_text']" />
+                    <img :src="post['title_image_path']" alt="">
+                </div>
+                <div class="pure-u-3-5">
+                    <MarkdownDisplay :markdown="post['description']" />
+                </div>
             </div>
-            <div class="pure-u-3-5">
-                <MarkdownDisplay :markdown="post['description']" />
-            </div>
-        </div>
+        </RouterLink>
     </div>
 </template>
 

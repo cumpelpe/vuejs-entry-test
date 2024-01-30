@@ -1,9 +1,9 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --color-light-shade: #F8FAF9;
-  --color-light-accent: #A8BBBF;
-  --color-main: #A48249;
-  --color-dark: #453E40;
+  --color-light-shade: #f8faf9;
+  --color-light-accent: #a8bbbf;
+  --color-main: #a48249;
+  --color-dark: #453e40;
 }
 
 /* semantic color variables for this project */
@@ -24,7 +24,6 @@
   --section-gap: 160px;
 }
 
-
 *,
 *::before,
 *::after {
@@ -32,7 +31,10 @@
   margin: 0;
   font-weight: normal;
 }
-
+a {
+  all: unset;
+  cursor: pointer;
+}
 body {
   min-height: 100vh;
   color: var(--color-text);

@@ -9,15 +9,25 @@ import subscript from 'markdown-it-sub';
 //@ts-expect-error
 import footnote from 'markdown-it-footnote';
 import katex from "@vscode/markdown-it-katex";
-import { ref } from "vue";
-const post = ref();
+import TitleText from '@/components/TitleText.vue';
 
-post.value = ''
+import { blogPostsStore } from '@/stores/blog_post';
+import { useRoute } from 'vue-router';
+
+const router = useRoute();
+
+// const post = ref();
+
+const posts = blogPostsStore();
+const post = posts.blog_posts[Number.parseInt(router.params.id)];
+
 </script>
 
 <template>
     <div>
-        <vue-markdown-it :source="post" :options="{
+        <TitleText :text="post['title_text']" />
+        <img :src="post['title_image_path']">
+        <vue-markdown-it :source="post['content']" :options="{
             linkify: true,
             typographer: true
         }" :plugins="[emoji, subscript, superscript, footnote, katex]" />
