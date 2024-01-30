@@ -48,21 +48,27 @@ div {
     position: relative;
 }
 
-.input_label {
+.input_label{
     position: absolute;
-    left: 0;
-    top: -2px;
-    padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
-    margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * .5);
-    background: var(--color-background);
-    white-space: nowrap;
-    transform: translate(0, 0);
-    transform-origin: 0 0;
+    left: 1em;
+    top: -1rem;
     background: var(--color-background);
     transition: transform 120ms ease-in;
-    font-weight: bold;
-    line-height: 1.2;
-    z-index: 2;
+}
+@supports (-moz-appearance:none) {
+    .input_label {
+        position: absolute;
+        left: 0;
+        top: -2px;
+        padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
+        margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * .5);
+        white-space: nowrap;
+        background: var(--color-background);
+        transition: transform 120ms ease-in;
+        font-weight: bold;
+        line-height: 1.2;
+        z-index: 2;
+    }
 }
 
 .input_field {
