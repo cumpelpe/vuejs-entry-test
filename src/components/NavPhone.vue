@@ -8,19 +8,22 @@ const is_toggled = ref(false);
 function toggle_menu() {
     is_toggled.value = !is_toggled.value;
 }
+function untoggle_menu(){
+    is_toggled.value = false;
+}
 </script>
 
 
 <template>
     <nav>
         <div @click="toggle_menu"><FontAwesomeIcon icon="fa-solid fa-bars" /></div>
-        <div v-if="is_toggled">
+        <div @click="untoggle_menu" v-if="is_toggled">
             <RouterLink to="/"><span>Home</span></RouterLink>
         </div>
-        <div v-if="is_toggled">
+        <div @click="untoggle_menu" v-if="is_toggled">
             <RouterLink to="/create-post"><span>Create post</span></RouterLink>
         </div>
-        <div v-if="is_toggled">
+        <div @click="untoggle_menu" v-if="is_toggled">
             <RouterLink to="/"><span>Home</span></RouterLink>
         </div>
     </nav>
