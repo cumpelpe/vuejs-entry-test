@@ -43,4 +43,8 @@ const blog_posts_store = blogPostsStore();
     border-left: var(--border-size) solid var(--color-dark);
     background-color: var(--color-background-soft);
 }
+
+img{
+    max-width: 100%;
+}
 </style>

@@ -4,7 +4,7 @@ import BlogPostListView from '@/views/BlogPostListView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import { blogPostsStore } from '@/stores/blog_post'
 
-function check_blog_post(to, from) {
+function check_blog_post(to) {
   const posts = blogPostsStore();
   if (!posts.post_exists(to.params.id))
     return { name: 'not_found' }
