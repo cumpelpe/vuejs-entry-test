@@ -20,11 +20,31 @@ post.value = props.markdown;
 </script>
 
 <template>
+    <div>
         <vue-markdown-it :source="markdown" :options="{
             linkify: true,
             typographer: true
         }" :plugins="[emoji, subscript, superscript, footnote, katex]" />
+    </div>
 </template>
 
 <style scoped>
+div{
+    overflow-wrap: anywhere;
+    /* word-break: break-all; */
+}
+
+</style>
+
+<style>
+pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+img{
+    max-width: 100%;
+}
 </style>

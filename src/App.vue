@@ -1,16 +1,20 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import Navbar from './components/Navbar.vue'
-import { Transition } from 'vue';
+import NavPhone from './components/NavPhone.vue';
+import { useWindowSize } from 'vue-window-size';
 // import HelloWorld from './components/HelloWorld.vue'
+
+const { width, height } = useWindowSize();
 </script>
 
 <template>
   <div class="pure-g container">
-    <div class="pure-u-1-5">
-      <Navbar />
+    <div class="pure-u-1 pure-u-xl-1-5">
+      <Navbar v-if="width > 1280" />
+      <NavPhone v-else />
     </div>
-    <div class="pure-u-4-5">
+    <div class="pure-u-1 pure-u-xl-4-5">
       <div class="content">
         <RouterView v-slot="{ Component, route }">
           <!-- Use a custom transition or fallback to `fade` -->

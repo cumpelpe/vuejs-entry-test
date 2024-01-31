@@ -48,14 +48,14 @@ function create_post() {
             <ButtonInput v-else @click="create_post">Create Post</ButtonInput>
             <RouterLink v-if="!is_create" :to="'/posts/' + $route.params.id"><ButtonInput>View Post</ButtonInput></RouterLink>
         </div>
-        <div class="pure-u-4-24">
+        <div class="pure-u-xl-4-24 pure-u-1">
             <TextInput v-model="post_name" id="post_name" placeholder="Post title" label="Post title" />
             <TextInput v-model="post_image_path" id="image_path" placeholder="Post image path" label="Post image path" />
         </div>
-        <div class="pure-u-10-24">
+        <div class="pure-u-xl-10-24 pure-u-1">
             <img :src="post_image_path" />
         </div>
-        <div class="pure-u-10-24">
+        <div class="pure-u-xl-10-24 pure-u-1">
             <MarkdownEditor v-model="post_description" :preview="false" label="Short Description" />
         </div>
         <div class="pure-u-1-1 editor">

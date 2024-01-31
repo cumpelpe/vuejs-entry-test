@@ -56,4 +56,7 @@ div {
 .buttons {
     display: flex;
 }
+img{
+    max-width: 100%;
+}
 </style>
