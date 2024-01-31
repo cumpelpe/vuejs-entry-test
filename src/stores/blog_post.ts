@@ -100,6 +100,20 @@ export const blogPostsStore = defineStore('blog_posts', () => {
         //some kind of API call
     }
 
+    function delete_post(
+        id: number
+    ) {
+        // some kind of API call
+
+        blog_posts.value = blog_posts.value.filter((post) => post.id != id)
+    }
+
+    function post_exists(
+        id: number
+    ) {
+        return blog_posts.value.findIndex(post => post.id == id) != -1;
+    }
+
     load_posts();
-    return { blog_posts, create_post, load_posts, update_post }
+    return { blog_posts, create_post, load_posts, update_post, delete_post, post_exists }
 })

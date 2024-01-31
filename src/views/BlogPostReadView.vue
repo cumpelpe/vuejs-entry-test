@@ -14,12 +14,12 @@ import TitleText from '@/components/TitleText.vue';
 import { blogPostsStore } from '@/stores/blog_post';
 import { useRoute } from 'vue-router';
 
-const router = useRoute();
+const route = useRoute();
 
 // const post = ref();
 
 const posts = blogPostsStore();
-const post = posts.blog_posts.find((post) => post.id == Number.parseInt(router.params.id));
+const post = posts.blog_posts.find((post) => post.id == Number.parseInt(route.params.id));
 
 
 </script>
