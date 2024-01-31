@@ -11,9 +11,6 @@ import { RouterLink } from 'vue-router'
         <div>
             <RouterLink to="/create-post"><span>Create post</span></RouterLink>
         </div>
-        <div>
-            <RouterLink to="/"><span>Home</span></RouterLink>
-        </div>
     </nav>
 </template>
 

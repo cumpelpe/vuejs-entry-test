@@ -23,9 +23,6 @@ function untoggle_menu(){
         <div @click="untoggle_menu" v-if="is_toggled">
             <RouterLink to="/create-post"><span>Create post</span></RouterLink>
         </div>
-        <div @click="untoggle_menu" v-if="is_toggled">
-            <RouterLink to="/"><span>Home</span></RouterLink>
-        </div>
     </nav>
 </template>
 
