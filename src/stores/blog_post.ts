@@ -2,7 +2,7 @@ import { ref, type Ref, reactive, computed } from 'vue'
 import { defineStore } from 'pinia'
 import posts_lorem_ipsum from "@/stores/blog_posts"
 
-class BlogPost {
+export class BlogPost {
     private _id: number;
     public get id(): number {
         return this._id;

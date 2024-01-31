@@ -3,8 +3,9 @@ import BlogPostEditView from '@/views/BlogPostEditView.vue'
 import BlogPostListView from '@/views/BlogPostListView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import { blogPostsStore } from '@/stores/blog_post'
+import BlogPostCreateView from '@/views/BlogPostCreateView.vue'
 
-function check_blog_post(to) {
+function check_blog_post_exists(to) {
   const posts = blogPostsStore();
   if (!posts.post_exists(to.params.id))
     return { name: 'not_found' }
@@ -22,19 +23,19 @@ const router = createRouter({
     {
       path: "/create-post",
       name: "create_post",
-      component: BlogPostEditView,
+      component: BlogPostCreateView,
     },
     {
       path: '/posts/:id',
       name: 'read_post',
       component: () => import('../views/BlogPostReadView.vue'),
-      beforeEnter: [check_blog_post],
+      beforeEnter: [check_blog_post_exists],
     },
     {
       path: '/posts/:id/edit',
       name: 'edit_post',
       component: BlogPostEditView,
-      beforeEnter: [check_blog_post],
+      beforeEnter: [check_blog_post_exists],
     }
   ]
 })
