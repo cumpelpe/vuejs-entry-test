@@ -19,12 +19,14 @@ const router = useRoute();
 // const post = ref();
 
 const posts = blogPostsStore();
-const post = posts.blog_posts[Number.parseInt(router.params.id)];
+const post = posts.blog_posts.find((post) => post.id == Number.parseInt(router.params.id));
+
 
 </script>
 
 <template>
     <div>
+        <RouterLink :to="'/posts/' + $route.params.id + '/edit'">Edit Post</RouterLink>
         <TitleText :text="post['title_text']" />
         <img :src="post['title_image_path']">
         <vue-markdown-it :source="post['content']" :options="{
@@ -36,8 +38,6 @@ const post = posts.blog_posts[Number.parseInt(router.params.id)];
 
 <style scoped>
 div {
-    padding-left: 5%;
-    padding-right: 5%;
     width: 100%;
 }
 </style>
