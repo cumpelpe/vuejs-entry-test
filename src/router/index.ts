@@ -1,13 +1,14 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, type RouteLocationNormalized } from 'vue-router'
 import BlogPostEditView from '@/views/BlogPostEditView.vue'
 import BlogPostListView from '@/views/BlogPostListView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import { blogPostsStore } from '@/stores/blog_post'
 import BlogPostCreateView from '@/views/BlogPostCreateView.vue'
 
-function check_blog_post_exists(to) {
+function check_blog_post_exists(to: RouteLocationNormalized) {
   const posts = blogPostsStore();
-  if (!posts.post_exists(to.params.id))
+  // @ts-ignore
+  if (!posts.post_exists(Number.parseInt(to.params.id)))
     return { name: 'not_found' }
 }
 

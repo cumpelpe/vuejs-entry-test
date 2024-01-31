@@ -3,8 +3,8 @@ import { RouterView } from 'vue-router'
 import Navbar from './components/Navbar.vue'
 import NavPhone from './components/NavPhone.vue';
 import { useWindowSize } from 'vue-window-size';
-// import HelloWorld from './components/HelloWorld.vue'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { width, height } = useWindowSize();
 </script>
 
@@ -18,7 +18,7 @@ const { width, height } = useWindowSize();
       <div class="content">
         <RouterView v-slot="{ Component, route }">
           <!-- Use a custom transition or fallback to `fade` -->
-          <Transition :name="route.meta.transition || 'slide-fade'">
+          <Transition :name="'slide-fade'">
             <Component :is="Component" />
           </Transition>
         </RouterView>

@@ -12,10 +12,15 @@ const router = useRoute();
 const posts = blogPostsStore();
 let post = posts.blog_posts.find((post) => post.id == Number.parseInt(router.params.id));
 
+// post is always defined
 const edited_post = ref({
+    // @ts-ignore
     title_text: post.title_text,
+    // @ts-ignore
     title_image_path: post.title_image_path,
+    // @ts-ignore
     description: post.description,
+    // @ts-ignore
     content: post.content
 })
 

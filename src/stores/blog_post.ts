@@ -1,4 +1,4 @@
-import { ref, type Ref, reactive, computed } from 'vue'
+import { ref, type Ref } from 'vue'
 import { defineStore } from 'pinia'
 import posts_lorem_ipsum from "@/stores/blog_posts"
 

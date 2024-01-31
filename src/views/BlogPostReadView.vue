@@ -18,8 +18,6 @@ import ButtonInput from '@/components/ButtonInput.vue';
 const route = useRoute();
 const router = useRouter();
 
-// const post = ref();
-
 const posts = blogPostsStore();
 const post = posts.blog_posts.find((post) => post.id == Number.parseInt(route.params.id));
 

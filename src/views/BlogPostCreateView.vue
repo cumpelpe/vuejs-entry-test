@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import ButtonInput from '@/components/ButtonInput.vue';
-import { RouterLink } from 'vue-router';
 import BlogPostEditForm from '@/components/BlogPostEditForm.vue';
 
 import { blogPostsStore } from '@/stores/blog_post';
 
 const posts = blogPostsStore();
-const is_create = ref(false);
 const edited_post = ref({
     title_text: "",
     title_image_path: "",
